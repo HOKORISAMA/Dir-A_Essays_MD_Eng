@@ -1,8 +1,9 @@
 
-Initial Understanding of C++ Design Thinking on Data Encapsulation
+### Initial Understanding of C++ Design Thinking on Data Encapsulation
 This document aims to introduce the concept of data encapsulation in C++. It does not teach the basic knowledge of C++, and some parts are not covered. The focus is on explaining the concept, and after reading this, you can refer to other introductory C++ videos for a better understanding.
 
-0x00 We Need a Container to Store Data
+## 0x00 
+We Need a Container to Store Data
 Suppose we need to process some information about students. Each student has four pieces of information: student ID, age, grade in subject A, and grade in subject B.
 
 In C, we can define a structure to represent this data type (for simplicity, all data is represented as int):
