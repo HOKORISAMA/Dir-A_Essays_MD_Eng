@@ -47,7 +47,8 @@ int main() {
 ```
 Now, we have defined a data type called Student and allocated 4*4 bytes of memory space to store the data of this type. This space is named xiaoming and all its data is initialized to 0.
 
-0x01 Assigning Information to Xiaoming
+## 0x01 
+Assigning Information to Xiaoming
 Let's put some information into this student's data:
 
 ```
@@ -87,7 +88,8 @@ int main() {
     xiaoming.SubB = 60;
 }
 ```
-0x02 Calculating Xiaoming's Average Score
+## 0x02 
+Calculating Xiaoming's Average Score
 Now that the student's information has been entered into the computer, let's calculate his average score.
 
 The average score is simply SubA + SubB divided by 2. However, there is more than one student in a class. If we always write (xiaoming.SubA + xiaoming.SubB) / 2, it is quite tedious. First, we need to write the student's name xiaoming, then access the specific subject scores, add them, and then calculate the average.
