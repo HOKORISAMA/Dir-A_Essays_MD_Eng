@@ -102,3 +102,69 @@ int Average(int A, int B)
     return aver;
 }
 ```
+## 0x03 
+How to Write it More Elegantly?
+The current code works fine, but if we add another student, they can also use the Average() function to calculate the average score of two subjects. However, this Average() function is global, meaning it can be called by anyone, even those who are not students in your class. Furthermore, any two integers can be passed to this function, even if they are not scores.
+
+For example:
+
+```
+int err = Average(xiaoming.ID, xiaoming.Age);
+```
+Adding the student ID and age to calculate an average score doesn't make sense. Also, a student from another class might have different subjects, and they can still use this function to calculate their average score. If their subjects are easier, their average score could be higher than ours, which isn't fair.
+
+The code looks like a machine without a casing, with pipes and screws exposed, ready to be taken apart or modified at any time. Would you buy a phone or computer without a casing, with batteries and circuit boards exposed? Obviously not. You might buy a phone with a metal frame and glass back or a computer with a metal case, which feels smooth and may even have waterproof features, working even when dropped in water.
+
+Let's give our program a casing. The Average() function is clearly meant to calculate the average score for students in our class, not for other classes, and certainly not for averaging ages and IDs. We previously defined the Student data type, so let's add some more to it.
+
+```
+struct Student {
+    int ID;
+    int Age;
+    int SubA;
+    int SubB;
+
+    int Average() {
+        int aver = (SubA + SubB) / 2;
+        return aver;
+    }
+};
+```
+Now, doesn't it seem like Average() is part of the Student type? We can use the member access operator . to access this function, similar to before. However, instead of writing:
+
+```
+int c = Average(xiaoming.SubA, xiaoming.SubB);
+```
+We write:
+
+```
+int c = xiaoming.Average();
+```
+Now, the function belongs to the Student type, and it can only be called for student instances. It uses the instance's data directly, ensuring that only relevant data is used.
+
+Here is the complete, improved code:
+
+```
+#include <iostream>
+
+struct Student {
+    int ID;
+    int Age;
+    int SubA;
+    int SubB;
+
+    int Average() {
+        return (SubA + SubB) / 2;
+    }
+};
+
+int main() {
+    // Equivalent to int a = 0;
+    Student xiaoming = {10086, 20, 80, 60};
+    // Calculate Xiaoming's average score
+    int c = xiaoming.Average();
+    std::cout << "Xiaoming's average score is " << c << std::endl;
+}
+```
+Summary
+By encapsulating the Average function within the Student structure, we ensure that the function operates on relevant data only, providing a more elegant and logical structure to our code. This encapsulation is a core concept in C++ that helps to maintain the integrity and reusability of code, making it easier to understand and manage.
