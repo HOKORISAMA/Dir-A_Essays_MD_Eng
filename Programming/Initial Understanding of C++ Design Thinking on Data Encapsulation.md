@@ -8,7 +8,8 @@ Suppose we need to process some information about students. Each student has fou
 
 In C, we can define a structure to represent this data type (for simplicity, all data is represented as int):
 
-```struct Student {
+```
+struct Student {
     int ID;
     int Age;
     int SubA;
