@@ -8,14 +8,13 @@ Suppose we need to process some information about students. Each student has fou
 
 In C, we can define a structure to represent this data type (for simplicity, all data is represented as int):
 
-c
-Copy code
-struct Student {
+`struct Student {
     int ID;
     int Age;
     int SubA;
     int SubB;
-};
+};`
+
 This means defining a Student type, which describes a student's information, occupying 4*4 bytes (one int is 4 bytes in a 32-bit system).
 
 When defining a variable, we usually write:
