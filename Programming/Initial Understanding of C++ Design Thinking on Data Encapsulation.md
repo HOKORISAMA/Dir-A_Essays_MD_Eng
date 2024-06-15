@@ -8,29 +8,30 @@ Suppose we need to process some information about students. Each student has fou
 
 In C, we can define a structure to represent this data type (for simplicity, all data is represented as int):
 
-`struct Student {
+```struct Student {
     int ID;
     int Age;
     int SubA;
     int SubB;
-};`
+};
+```
 
 This means defining a Student type, which describes a student's information, occupying 4*4 bytes (one int is 4 bytes in a 32-bit system).
 
 When defining a variable, we usually write:
 
-c
-Copy code
+```
 int a = 0;
+```
+
 This means defining an int type variable a and initializing it to 0. Similarly:
 
-c
-Copy code
+```
 Student xiaoming = { 0 };
+```
 This means defining a Student type variable xiaoming and initializing it to 0. The { 0 } means initializing the structure, equivalent to a = 0. Actually, int a = { 0 }; is also valid.
 
-c
-Copy code
+```
 struct Student {
     int ID;
     int Age;
@@ -42,31 +43,33 @@ int main() {
     // Equivalent to int a = 0;
     Student xiaoming = { 0 };
 }
+```
 Now, we have defined a data type called Student and allocated 4*4 bytes of memory space to store the data of this type. This space is named xiaoming and all its data is initialized to 0.
 
 0x01 Assigning Information to Xiaoming
 Let's put some information into this student's data:
 
+```
 Student ID: 10086
 Age: 20
 Grade in Subject A: 80
 Grade in Subject B: 60
 How do we store this data?
+```
 
 It's simple. By using the dot operator ., we can access some data of this student:
 
-c
-Copy code
+```
 xiaoming.ID = 10086;
 xiaoming.Age = 20;
 xiaoming.SubA = 80;
 xiaoming.SubB = 60;
+```
 The dot operator is called the member access operator. To access some data of a student, add a dot after the student variable.
 
 Later, we will discuss accessing not only data but also functions, which are methods to process the data.
 
-c
-Copy code
+```
 struct Student {
     int ID;
     int Age;
@@ -82,6 +85,7 @@ int main() {
     xiaoming.SubA = 80;
     xiaoming.SubB = 60;
 }
+```
 0x02 Calculating Xiaoming's Average Score
 Now that the student's information has been entered into the computer, let's calculate his average score.
 
