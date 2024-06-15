@@ -93,3 +93,10 @@ Now that the student's information has been entered into the computer, let's cal
 The average score is simply SubA + SubB divided by 2. However, there is more than one student in a class. If we always write (xiaoming.SubA + xiaoming.SubB) / 2, it is quite tedious. First, we need to write the student's name xiaoming, then access the specific subject scores, add them, and then calculate the average.
 
 At this point, we might consider a general function that takes two scores as input and returns their average.
+```
+int Average(int A, int B)
+{
+    int aver = (A + B) / 2;
+    return aver;
+}
+```
